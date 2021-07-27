@@ -16,14 +16,14 @@ FEMALE = ["e", "ragazze", "siamo ragazze", "siamo ragazze.", "female", "femmina"
 
 @click.command()
 @click.option("-k", "--kind", help="The meme variation. If not specified, picks a random variation.", default=None, type=str)
-@click.option("-t", "--top-text", help="Path to the file containing text appearing at the top of the meme.", default=sys.stdin, type=click.File("r"))
+@click.option("-t", "--top-text", help="Path to the file containing text appearing at the top of the meme. Defaults to stdin.", default=sys.stdin, type=click.File("r"))
 @click.option("-b", "--bottom-text", help="Overrides the text appearing at the bottom of the meme.", default=None, type=str)
 @click.option("-c", "--background-color", help="Overrides the background color of the meme.", default=None, type=str)
 @click.option("-f", "--foreground-color", help="Overrides the foreground color of the meme.", default=None, type=str)
 @click.option("-f", "--font", help="Path to the TrueType font to be used in the meme.", default=None, type=click.Path(exists=True, dir_okay=False))
 @click.option("-s", "--seed", help="Set the random seed.", default=None, type=str)
 @click.option("-v", "--variation", help="Pixel variation for sizes and positions.", default=40, type=int)
-@click.option("-o", "--output", help="Path to save the png output to.", default=sys.stdout, type=click.File(mode="wb"))
+@click.option("-o", "--output", help="Path to save the png output to. Defaults to stdout.", default=sys.stdout, type=click.File(mode="wb"))
 def main(top_text, output, bottom_text=None, background_color=None, foreground_color=None, kind=None, font=None, seed=None, variation=40):
     if seed:
         random.seed(seed)
