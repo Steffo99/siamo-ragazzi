@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "siamo_ragazzi"
-version = "0.1.0"
+version = "1.0.0"
 description = "\"Siamo ragazzi\" meme generator"
 authors = ["Stefano Pigozzi <me@steffo.eu>"]
 license = "AGPL-3.0-or-later"
